@@ -16,7 +16,7 @@ class Dishes extends Component {
     title: "",
     type: "",
     description: "",
-    date:""
+    date: ""
   };
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class Dishes extends Component {
   loadDishes = () => {
     API.getDishes()
       .then(res =>
-        this.setState({ dishes: res.data, title: "", type: "", description: "", date:"" })
+        this.setState({ dishes: res.data, title: "", type: "", description: "", date: "" })
       )
       .catch(err => console.log(err));
   };
@@ -82,7 +82,7 @@ class Dishes extends Component {
                 placeholder="Description (required)"
               />
               <FormBtn
-                disabled={!(this.state.type && this.state.title&& this.state.description)}
+                disabled={!(this.state.type && this.state.title && this.state.description)}
                 onClick={this.handleFormSubmit}
               >
                 Submit New Menu Item
@@ -94,20 +94,23 @@ class Dishes extends Component {
               <List>
                 <Header>Appetizers</Header>
                 {this.state.dishes.map(dish => (
-                  <ListItem key={dish._id}>
-                   {/* <Card/> */}
-                    <Link to={"/dishes/" + dish._id}>
-                      <strong>
-                       Title:  {dish.title} Type: {dish.type} Description:{dish.description} Date Created: {moment(dish.date).format('MMM Do YYYY')}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
-                  </ListItem>
+                  <Card key={dish._id}
+                    title={dish.title}
+                    type={dish.type}
+                    description={dish.description}
+                    date={moment(dish.date).format('MMM Do YYYY')}
+                    link={dish._id}>
+
+                    {/* <Link to={"/dishes/" + dish._id}>
+<DeleteBtn onClick={() => this.deleteDish(dish._id)} />
+</Link> */}
+
+                  </Card>
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
