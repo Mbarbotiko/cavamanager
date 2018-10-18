@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import moment from "moment/moment.js";
+import { Header } from "../../components/Header";
+import { Card } from "../../components/Card";
 
 class Dishes extends Component {
   state = {
@@ -58,10 +61,7 @@ class Dishes extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Add Menu Items Here</h1>
-            </Jumbotron>
+          <Col size="md-12">
             <form>
               <Input
                 value={this.state.title}
@@ -89,17 +89,16 @@ class Dishes extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Menu Items Already Added to Menu on Website</h1>
-            </Jumbotron>
+          <Col size="md-12 sm-12">
             {this.state.dishes.length ? (
               <List>
+                <Header>Appetizers</Header>
                 {this.state.dishes.map(dish => (
                   <ListItem key={dish._id}>
+                   {/* <Card/> */}
                     <Link to={"/dishes/" + dish._id}>
                       <strong>
-                       Title:  {dish.title} Type: {dish.type} Description:{dish.description}
+                       Title:  {dish.title} Type: {dish.type} Description:{dish.description} Date Created: {moment(dish.date).format('MMM Do YYYY')}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
