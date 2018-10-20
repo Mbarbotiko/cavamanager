@@ -5,7 +5,7 @@ a :link{
 }
 
 a:visited{
-    color:white;
+    color:black;
 }
 
 a:hover{
@@ -20,4 +20,10 @@ a:active{
 a{
     color:rgb(22, 165, 22);
     text-decoration: none;
+}
+
+
+#submission-form{
+    margin:auto;
+    width:50%;
 }

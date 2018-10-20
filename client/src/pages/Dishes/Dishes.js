@@ -16,7 +16,7 @@ class Dishes extends Component {
     title: "",
     type: "",
     description: "",
-    date:""
+    date: ""
   };
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class Dishes extends Component {
   loadDishes = () => {
     API.getDishes()
       .then(res =>
-        this.setState({ dishes: res.data, title: "", type: "", description: "", date:"" })
+        this.setState({ dishes: res.data, title: "", type: "", description: "", date: "" })
       )
       .catch(err => console.log(err));
   };
@@ -62,7 +62,7 @@ class Dishes extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <form>
+            <form id="submission-form">
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -82,7 +82,7 @@ class Dishes extends Component {
                 placeholder="Description (required)"
               />
               <FormBtn
-                disabled={!(this.state.type && this.state.title&& this.state.description)}
+                disabled={!(this.state.type && this.state.title && this.state.description)}
                 onClick={this.handleFormSubmit}
               >
                 Submit New Menu Item
@@ -90,24 +90,35 @@ class Dishes extends Component {
             </form>
           </Col>
           <Col size="md-12 sm-12">
+          <Header>Appetizers</Header>
             {this.state.dishes.length ? (
-              <List>
-                <Header>Appetizers</Header>
+              <div className='dish-cards'>
                 {this.state.dishes.map(dish => (
-                  <ListItem key={dish._id}>
-                   {/* <Card/> */}
+                  <Card key={dish._id}>
                     <Link to={"/dishes/" + dish._id}>
-                      <strong>
-                       Title:  {dish.title} Type: {dish.type} Description:{dish.description} Date Created: {moment(dish.date).format('MMM Do YYYY')}
-                      </strong>
-                    </Link>
+                     
+                        <div class="card-header">
+                        {dish.title}
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title"> {dish.type}</h5>
+                          <p class="card-text">{dish.description}</p>
+                        </div>
+                       
+                        {moment(dish.date).format('MMM Do YYYY')}
+                       
+                      
+                      </Link>
+
+                     <div class="card-footer text-muted">
                     <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
-                  </ListItem>
+                    </div>
+                    </Card>
                 ))}
-              </List>
+             </div>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <Header>No Results to Display</Header>
+              )}
           </Col>
         </Row>
       </Container>
