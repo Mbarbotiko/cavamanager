@@ -9,7 +9,7 @@ class Detail extends Component {
     dish: {}
   };
   // When this component mounts, grab the dish with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+  // e.g. localhost:3000/dishes/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getDish(this.props.match.params.id)
       .then(res => this.setState({ dish: res.data }))
@@ -40,7 +40,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Dishes</Link>
+            <Link to="/dishes">← Back to Dishes</Link>
           </Col>
         </Row>
       </Container>

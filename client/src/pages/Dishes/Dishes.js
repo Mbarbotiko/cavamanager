@@ -90,40 +90,127 @@ class Dishes extends Component {
             </form>
           </Col>
           <Col size="md-12 sm-12">
-          <Header>Appetizers</Header>
+       
+            <Header>Entrees</Header>
             {this.state.dishes.length ? (
               <div className='dish-cards'>
                 {this.state.dishes.map(dish => (
-                  <Card key={dish._id}>
-                    <Link to={"/dishes/" + dish._id}>
-                     
-                        <div class="card-header">
-                        {dish.title}
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title"> {dish.type}</h5>
-                          <p class="card-text">{dish.description}</p>
-                        </div>
-                       
-                        {moment(dish.date).format('MMM Do YYYY')}
-                       
-                      
-                      </Link>
+                  <div>
+                    {dish.type === 'Entree' ? (
 
-                     <div class="card-footer text-muted">
-                    <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
-                    </div>
-                    </Card>
+                      <Card key={dish._id}>
+                        <Link to={"/dishes/" + dish._id}>
+                          <div class="card-header">
+                            {dish.title}
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title"> {dish.type}</h5>
+                            <p class="card-text">{dish.description}</p>
+                          </div>
+                          {moment(dish.date).format('MMM Do YYYY')}
+                        </Link>
+                        <div class="card-footer text-muted">
+                          <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
+                        </div>
+                        
+                      </Card>
+                      
+                    ) : (
+                        console.log("i am not an entree")
+                      )}
+                  </div>
+                 
                 ))}
-             </div>
+
+
+               
+                  <Header>Appetizer</Header>
+               
+                  {this.state.dishes.map(dish => (
+                    <div>
+                      {dish.type === 'Appetizer' ? (
+
+                        <Card key={dish._id}>
+                          <Link to={"/dishes/" + dish._id}>
+                            <div class="card-header">
+                              {dish.title}
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"> {dish.type}</h5>
+                              <p class="card-text">{dish.description}</p>
+                            </div>
+                            {moment(dish.date).format('MMM Do YYYY')}
+                          </Link>
+                          <div class="card-footer text-muted">
+                            <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
+                          </div>
+                        </Card>
+
+                      ) : (
+                          console.log("i am not an appetizer")
+                        )}
+                    </div>
+                  ))}
+
+                  <Header>Drinks</Header>
+                  {this.state.dishes.map(dish => (
+                    <div>
+                      {dish.type === 'Drinks' ? (
+
+                        <Card key={dish._id}>
+                          <Link to={"/dishes/" + dish._id}>
+                            <div class="card-header">
+                              {dish.title}
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"> {dish.type}</h5>
+                              <p class="card-text">{dish.description}</p>
+                            </div>
+                            {moment(dish.date).format('MMM Do YYYY')}
+                          </Link>
+                          <div class="card-footer text-muted">
+                            <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
+                          </div>
+                        </Card>
+
+                      ) : (
+                          console.log("i am not a drink")
+                        )}
+                    </div>
+                  ))}
+            
+              </div>
+
+
+
+
+
+
             ) : (
                 <Header>No Results to Display</Header>
               )}
           </Col>
         </Row>
-      </Container>
+      </Container >
     );
   }
 }
 
 export default Dishes;
+
+
+                  // <Card key={dish._id}>
+                  //   <Link to={"/dishes/" + dish._id}>
+                  //     <div class="card-header">
+                  //       {dish.title}
+                  //     </div>
+                  //     <div class="card-body">
+                  //       <h5 class="card-title"> {dish.type}</h5>
+                  //       <p class="card-text">{dish.description}</p>
+                  //     </div>
+                  //     {moment(dish.date).format('MMM Do YYYY')}
+                  //   </Link>
+                  //   <div class="card-footer text-muted">
+                  //     <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
+                  //   </div>
+                  // </Card>
