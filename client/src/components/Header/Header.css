@@ -1,10 +1,11 @@
 .header-container{
     font-size: 30pt;
     text-align: center;
-    width: 100%;
-    background-color:red;
-    display: block;
-    float: none;
+    clear: both;
+    padding-top:4%;
+    padding-bottom:2%;
 
 }
+
+
 

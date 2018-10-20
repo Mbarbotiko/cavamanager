@@ -7,6 +7,10 @@
 }
 
 .card-body{
-    min-height:150px;
+    min-height:200px;
+    /* background-image: url('https://mbarbotiko.github.io/cava/public/images/cava-logo-dark.gif');
+    background-repeat: no-repeat;
+    background-position: center;  */
+    background-color:rgb(65, 62, 62);
 }
 
