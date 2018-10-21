@@ -95,16 +95,12 @@ class Dishes extends Component {
                   Drop Menu
     </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-
-
                   <button className="dropdown-item" type="button" value='Appetizer'
                     onClick={this.handleDropMenuChange}>Appetizer</button>
                     <button className="dropdown-item" type="button" value='Entree'
                     onClick={this.handleDropMenuChange}>Entree</button>
-                    <button className="dropdown-item" type="button" value='Drink'
-                    onClick={this.handleDropMenuChange}>Drink</button>
-                  {/* <button className="dropdown-item" type="button" value='Entree'>{props.drop2}</button>
-      <button className="dropdown-item" type="button" calue='Drinks'>{props.drop3} */}
+                    <button className="dropdown-item" type="button" value='Drinks'
+                    onClick={this.handleDropMenuChange}>Drinks</button>
                 </div>
               </div>
               <TextArea
