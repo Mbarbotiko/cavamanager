@@ -41,14 +41,19 @@ class Dishes extends Component {
     this.setState({
       [name]: value
     });
+   
+
   };
 
-  handleDropMenuChange = event =>{
+  handleDropMenuChange = event => {
+    const { value } = event.target;
     this.setState({
-      type: event.target.value
-      
+       type:value
     });
-   
+    console.log(event)
+
+    console.log(value)
+    console.log(event.target)
   }
 
   handleFormSubmit = event => {
@@ -66,12 +71,12 @@ class Dishes extends Component {
 
   render() {
     console.log(this.state.type)
-    console.log(this.handleDropMenuChange)
     return (
+      
       <Container fluid>
         <Row>
           <Col size="md-12">
-          <Header>Submit A Menu Item</Header>
+            <Header>Submit A Menu Item</Header>
             <form id="submission-form">
               <Input
                 value={this.state.title}
@@ -85,15 +90,23 @@ class Dishes extends Component {
                 name="type"
                 placeholder="Type (required)"
               /> */}
-              <DropMenu 
-              value={this.state.type}
-              onChange={this.handleDropMenuChange}
-              name='type'
-              label={'Choose Type'}
-              drop1={'Appetizer'}
-              drop2={'Entree'}
-              drop3={'Drinks'}
-              />
+              <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Drop Menu
+    </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+
+                  <button className="dropdown-item" type="button" value='Appetizer'
+                    onClick={this.handleDropMenuChange}>Appetizer</button>
+                    <button className="dropdown-item" type="button" value='Entree'
+                    onClick={this.handleDropMenuChange}>Entree</button>
+                    <button className="dropdown-item" type="button" value='Drink'
+                    onClick={this.handleDropMenuChange}>Drink</button>
+                  {/* <button className="dropdown-item" type="button" value='Entree'>{props.drop2}</button>
+      <button className="dropdown-item" type="button" calue='Drinks'>{props.drop3} */}
+                </div>
+              </div>
               <TextArea
                 value={this.state.description}
                 onChange={this.handleInputChange}
