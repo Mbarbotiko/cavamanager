@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, TextArea, FormBtn, DropMenu } from "../../components/Form";
 import moment from "moment/moment.js";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
+
 
 class Dishes extends Component {
   state = {
@@ -44,6 +43,14 @@ class Dishes extends Component {
     });
   };
 
+  handleDropMenuChange = event =>{
+    this.setState({
+      type: event.target.value
+      
+    });
+   
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.description) {
@@ -58,6 +65,8 @@ class Dishes extends Component {
   };
 
   render() {
+    console.log(this.state.type)
+    console.log(this.handleDropMenuChange)
     return (
       <Container fluid>
         <Row>
@@ -70,11 +79,20 @@ class Dishes extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
-              <Input
+              {/* <Input
                 value={this.state.type}
                 onChange={this.handleInputChange}
                 name="type"
                 placeholder="Type (required)"
+              /> */}
+              <DropMenu 
+              value={this.state.type}
+              onChange={this.handleDropMenuChange}
+              name='type'
+              label={'Choose Type'}
+              drop1={'Appetizer'}
+              drop2={'Entree'}
+              drop3={'Drinks'}
               />
               <TextArea
                 value={this.state.description}
@@ -101,25 +119,25 @@ class Dishes extends Component {
 
                       <Card key={dish._id}>
                         <Link to={"/dishes/" + dish._id}>
-                          <div class="card-header">
+                          <div className="card-header">
                             {dish.title}
                           </div>
-                          <div class="card-body">
-                            <h5 class="card-title"> {dish.type}</h5>
-                            <p class="card-text">{dish.description}</p>
-                            <p class="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
+                          <div className="card-body">
+                            <h5 className="card-title"> {dish.type}</h5>
+                            <p className="card-text">{dish.description}</p>
+                            <p className="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
 
                           </div>
 
                         </Link>
-                        <div class="card-footer text-muted">
+                        <div className="card-footer text-muted">
                           <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
                         </div>
 
                       </Card>
 
                     ) : (
-                        console.log("i am not an entree")
+                        null
                       )}
                   </div>
 
@@ -135,23 +153,23 @@ class Dishes extends Component {
 
                       <Card key={dish._id}>
                         <Link to={"/dishes/" + dish._id}>
-                          <div class="card-header">
+                          <div className="card-header">
                             {dish.title}
                           </div>
-                          <div class="card-body">
-                            <h5 class="card-title"> {dish.type}</h5>
-                            <p class="card-text">{dish.description}</p>
-                            <p class="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
+                          <div className="card-body">
+                            <h5 className="card-title"> {dish.type}</h5>
+                            <p className="card-text">{dish.description}</p>
+                            <p className="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
 
                           </div>
                         </Link>
-                        <div class="card-footer text-muted">
+                        <div className="card-footer text-muted">
                           <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
                         </div>
                       </Card>
 
                     ) : (
-                        console.log("i am not an appetizer")
+                        null
                       )}
                   </div>
                 ))}
@@ -163,23 +181,23 @@ class Dishes extends Component {
 
                       <Card key={dish._id}>
                         <Link to={"/dishes/" + dish._id}>
-                          <div class="card-header">
+                          <div className="card-header">
                             {dish.title}
                           </div>
-                          <div class="card-body">
-                            <h5 class="card-title"> {dish.type}</h5>
-                            <p class="card-text">{dish.description}</p>
-                            <p class="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
+                          <div className="card-body">
+                            <h5 className="card-title"> {dish.type}</h5>
+                            <p className="card-text">{dish.description}</p>
+                            <p className="card-text">{moment(dish.date).format('MMM Do YYYY')}</p>
 
                           </div>
                         </Link>
-                        <div class="card-footer text-muted">
+                        <div className="card-footer text-muted">
                           <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
                         </div>
                       </Card>
 
                     ) : (
-                        console.log("i am not a drink")
+                        null
                       )}
                   </div>
                 ))}
@@ -206,16 +224,16 @@ export default Dishes;
 
                   // <Card key={dish._id}>
                   //   <Link to={"/dishes/" + dish._id}>
-                  //     <div class="card-header">
+                  //     <div className="card-header">
                   //       {dish.title}
                   //     </div>
-                  //     <div class="card-body">
-                  //       <h5 class="card-title"> {dish.type}</h5>
-                  //       <p class="card-text">{dish.description}</p>
+                  //     <div className="card-body">
+                  //       <h5 className="card-title"> {dish.type}</h5>
+                  //       <p className="card-text">{dish.description}</p>
                   //     </div>
                   //     {moment(dish.date).format('MMM Do YYYY')}
                   //   </Link>
-                  //   <div class="card-footer text-muted">
+                  //   <div className="card-footer text-muted">
                   //     <DeleteBtn onClick={() => this.deleteDish(dish._id)} />
                   //   </div>
                   // </Card>
