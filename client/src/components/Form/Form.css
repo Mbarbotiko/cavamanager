@@ -4,5 +4,14 @@
 }
 
 .form-group{
-    color:pink;
+    background-color:rgb(57, 196, 57);
 }
+/* 
+.form-control{
+    background-color:rgb(65, 62, 62);
+    color:white!important;
+
+
+} */
+
+

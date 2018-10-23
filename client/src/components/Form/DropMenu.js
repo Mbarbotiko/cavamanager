@@ -29,3 +29,5 @@
 
 // value={this.state.type}
 //               onClick={this.handleDropMenuChange}
+
+//Add state there and turn this into a class component

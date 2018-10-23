@@ -93,7 +93,7 @@ class Dishes extends Component {
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Drop Menu
-    </button>
+    </button> 
                 <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                   <button className="dropdown-item" type="button" value='Appetizer'
                     onClick={this.handleDropMenuChange}>Appetizer</button>
@@ -101,6 +101,8 @@ class Dishes extends Component {
                     onClick={this.handleDropMenuChange}>Entree</button>
                     <button className="dropdown-item" type="button" value='Drinks'
                     onClick={this.handleDropMenuChange}>Drinks</button>
+
+                    {/* This needs to be a class component, from DropMenu.JS with state so the button changes when clicked on showing the value chosen by the user */}
                 </div>
               </div>
               <TextArea

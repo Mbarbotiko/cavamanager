@@ -1,20 +1,26 @@
 
+body, html{
+    
+    font-family: 'Julius Sans One', sans-serif;
+
+}
+
 a :link{
-	color:black;
+	color:none!important;
 	
 }
 
 a:visited{
-    color:black;
+    color:rgb(57, 196, 57);
 }
 
 a:hover{
-    color:rgb(57, 196, 57);
+    color:rgb(69, 246, 69);
     text-decoration: none;
 }
 
 a:active{
-    color:black;
+    color:none!important;
 }
 
 a{
