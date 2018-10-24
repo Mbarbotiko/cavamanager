@@ -53,12 +53,41 @@ const dishSeed = [
       date: new Date(Date.now())
   },
   {
+    title: "Steak Fries",
+    type: "Appetizer",
+    description:
+      "Share these excellent thick cut steak fries with house made ketchup",
+      date: new Date(Date.now())
+  },
+  {
     title: "Steak and Fries",
     type: "Entree",
     description:
       "Grilled denver cut steak, house made fries, aioli, grilled peppers and avocado chimmichurri salad",
       date: new Date(Date.now())
   },
+  {
+    title: "Moscow Mule",
+    type: "Drinks",
+    description:
+      "Classic Moscow Mule served in a copper mug.  Made with fresh lemon juice, simple ginger syrup and Absolut",
+      date: new Date(Date.now())
+  },
+  {
+    title: "Greyhound",
+    type: "Drinks",
+    description:
+      "Refreshing vodka cocktail made with Absolut, Rose Liqueur fresh lemon and grapefruit juice",
+      date: new Date(Date.now())
+  },
+  {
+    title: "Margarita",
+    type: "Drinks",
+    description:
+      "Our best cocktail! Made with fresh lime juice, Patron, an orange liqueur.",
+      date: new Date(Date.now())
+  },
+  
   
 
 ];

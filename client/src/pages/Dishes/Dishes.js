@@ -18,6 +18,8 @@ class Dishes extends Component {
     date: ""
   };
 
+  //add photo upload using cloudinary(also update schema/ model) add to the details page.
+
   componentDidMount() {
     this.loadDishes();
   }
@@ -92,7 +94,7 @@ class Dishes extends Component {
               /> */}
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Drop Menu
+                  Choose Type
     </button> 
                 <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                   <button className="dropdown-item" type="button" value='Appetizer'
@@ -111,6 +113,8 @@ class Dishes extends Component {
                 name="description"
                 placeholder="Description (required)"
               />
+              {/* Insert var char limit so user doesnt write a novel, can limit it @ the schema(model) */}
+
               <FormBtn
                 disabled={!(this.state.type && this.state.title && this.state.description)}
                 onClick={this.handleFormSubmit}
@@ -157,6 +161,7 @@ class Dishes extends Component {
 
 
                 <Header>Appetizer</Header>
+                {/* use filter method instead of map */}
 
                 {this.state.dishes.map(dish => (
                   <div>
