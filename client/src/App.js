@@ -14,9 +14,9 @@ const App = () => (
     <div>
       <Nav />
       <Switch>
-        <Route exact path="cava-manager.herokuapp.com" component={LogIn} />
-        <Route exact path="cava-manager.herokuapp.com/dishes" component={Dishes} />
-        <Route exact path="cava-manager.herokuapp.com/dishes/:id" component={Detail} />
+        <Route exact path="https://cava-manager.herokuapp.com/" component={LogIn} />
+        <Route exact path="https://cava-manager.herokuapp.com//dishes" component={Dishes} />
+        <Route exact path="https://cava-manager.herokuapp.com/dishes/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>
     </div>
