@@ -1,0 +1,54 @@
+@media screen and (max-width: 1450px) and (min-width:1001px) {
+
+    .card{
+        width: 45%;
+        font-size: 14pt;
+    }
+
+    .card-body{
+        min-height:250px;
+    }
+
+    #submission-form{
+        width:80%;
+    }
+    
+   
+}
+
+
+@media screen and (max-width: 1000px) and (min-width:299px) {
+
+    .card{
+        width: 90%;
+        font-size: 16pt;
+    
+    }
+
+    .card-body{
+        min-height:300px;
+    }
+    #submission-form{
+        width:100%;
+    }
+    
+   
+}
+
+@media screen and (max-width: 300px) and (min-width:0px) {
+
+    .card{
+        width: 100%;
+        font-size: 20pt;
+    }
+
+    .card-body{
+        min-height:500px;
+    }
+    #submission-form{
+        width:100%;
+    }
+    
+   
+   
+}

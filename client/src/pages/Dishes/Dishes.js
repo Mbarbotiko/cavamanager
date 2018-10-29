@@ -3,10 +3,13 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { Input, TextArea, FormBtn, DropMenu } from "../../components/Form";
+import { Input, TextArea, FormBtn } from "../../components/Form";
+// DropMenu
 import moment from "moment/moment.js";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
+import '../../App.css';
+import '../../media.css';
 
 
 class Dishes extends Component {
@@ -52,10 +55,10 @@ class Dishes extends Component {
     this.setState({
        type:value
     });
-    console.log(event)
+    // console.log(event)
 
-    console.log(value)
-    console.log(event.target)
+    // console.log(value)
+    // console.log(event.target)
   }
 
   handleFormSubmit = event => {
@@ -72,7 +75,7 @@ class Dishes extends Component {
   };
 
   render() {
-    console.log(this.state.type)
+    // console.log(this.state.type)
     return (
       
       <Container fluid>
@@ -129,10 +132,10 @@ class Dishes extends Component {
             {this.state.dishes.length ? (
               <div className='dish-cards'>
                 {this.state.dishes.map(dish => (
-                  <div>
-                    {dish.type === 'Entree' ? (
+                  <div key={dish._id}>
+                    {dish.type  === 'Entree' ? (
 
-                      <Card key={dish._id}>
+                      <Card>
                         <Link to={"/dishes/" + dish._id}>
                           <div className="card-header">
                             {dish.title}
@@ -164,10 +167,10 @@ class Dishes extends Component {
                 {/* use filter method instead of map */}
 
                 {this.state.dishes.map(dish => (
-                  <div>
+                  <div key={dish._id}>
                     {dish.type === 'Appetizer' ? (
 
-                      <Card key={dish._id}>
+                      <Card>
                         <Link to={"/dishes/" + dish._id}>
                           <div className="card-header">
                             {dish.title}
@@ -192,10 +195,10 @@ class Dishes extends Component {
 
                 <Header>Drinks</Header>
                 {this.state.dishes.map(dish => (
-                  <div>
+                  <div key={dish._id}>
                     {dish.type === 'Drinks' ? (
 
-                      <Card key={dish._id}>
+                      <Card>
                         <Link to={"/dishes/" + dish._id}>
                           <div className="card-header">
                             {dish.title}

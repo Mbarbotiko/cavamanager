@@ -1,11 +1,19 @@
 .btn-dark{
     float: "right";
     margin-bottom: 10px;
+    width:100%;
 }
 
 .form-group{
     background-color:rgb(57, 196, 57);
 }
+
+#submission-form{
+    margin:auto;
+    width:50%;
+}
+
+
 /* 
 .form-control{
     background-color:rgb(65, 62, 62);
