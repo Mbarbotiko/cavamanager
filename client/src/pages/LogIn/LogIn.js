@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import plate  from './plate.png';
 import './LogIn.css';
-import '../../media.css';
 import { Link } from "react-router-dom";
+import '../../media.css';
 
 class LogIn extends Component {
   render() {

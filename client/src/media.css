@@ -13,6 +13,10 @@
         width:80%;
     }
     
+    .landing-logo {
+        margin-bottom:5%;
+      }
+    
    
 }
 
@@ -31,6 +35,11 @@
     #submission-form{
         width:100%;
     }
+
+    .landing-logo {
+        height: 350px!important;
+        margin-bottom:10%;
+      }
     
    
 }
@@ -48,6 +57,21 @@
     #submission-form{
         width:100%;
     }
+
+    .landing-logo {
+        height: 250px!important;
+        margin-bottom:15%;
+      }
+
+      h1{
+        font-size:14pt;
+      }
+
+      .navbar-brand{
+        font-size: 12pt!important;
+    
+    }
+    
     
    
    
